@@ -1,0 +1,701 @@
+{% load static %}
+<!DOCTYPE html><html class="no-js"><!--<![endif]--><head>
+	<title>DotCreative – Web Design Agency HTML Template</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Place favicon.ico and apple-touch-icon.png' %} in the root directory -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main2.css' %}" class="color-switcher-link">
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+	<!--[if lt IE 9]>
+		<script src="{% static 'js/vendor/html5shiv.min.js' %}"></script>
+		<script src="{% static 'js/vendor/respond.min.js' %}"></script>
+		<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<!--[if lt IE 9]>
+		<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="color-main">upgrade your browser</a> to improve your experience.</div>
+	<![endif]-->
+
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+
+	<!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">×</span>
+		</button>
+		<div class="widget widget_search">
+			<form method="get" class="searchform search-form" action="/">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+				</div>
+				<button type="submit" class="btn">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+			<!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+			<!--
+		<ul class="list-unstyled">
+			<li>Message To User</li>
+		</ul>
+		-->
+
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+			<!--topline section visible only on small screens|-->
+			<div class="header_absolute s-pb-30">
+				<header class="page_header ds">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-xl-2 col-lg-3 col-11">
+								<a href="./" class="logo text-center">
+									<img src="{% static 'images/logo.png' %}" alt="">
+								</a>
+							</div>
+							<div class="col-xl-8 col-lg-6 col-1 text-sm-center">
+								<!-- main nav start -->
+								<nav class="top-nav">
+									<ul class="nav sf-menu">
+
+
+										<li class="active">
+											<a href="{% url 'home' %}">Əsas səhifə</a>
+										
+										</li>
+										<li>
+											<a href="about.html">Haqqımızda</a>
+										</li>
+										<li>
+											<a href="services1.html">Xidmətlər</a>
+										
+										</li>
+										<!-- blog -->
+
+										<!-- gallery -->
+										<li>
+											<a href="gallery-regular.html">Portfolio</a>
+									
+										</li>
+										<!-- eof Gallery -->
+
+
+									
+										<!-- eof pages -->
+
+										<li>
+											<a href="blog-1.html">Bloq</a>
+								
+										</li>
+										<!-- eof blog -->
+
+										<li>
+											<a href="contact.html">Əlaqə</a>
+										
+										</li>
+										<!-- eof contacts -->
+
+						
+										<!-- eof features -->
+
+										<!-- contacts -->
+
+									</ul>
+
+
+								</nav>
+								<!-- eof main nav -->
+							</div>
+							<div class="col-xl-2 col-lg-3 text-lg-left text-xl-right d-none d-lg-block">
+								<div class="header_phone">
+									<h6>
+										<a href="tel:+994554464644"><span>+994 55 </span> 446 46 44</a>
+									</h6>
+								</div>
+							</div>
+							<div class="search-box">
+								<input type="text" name="search" placeholder="Bloqlarda axtar..." class="search-text">
+								<a href="#" class="search-btn">
+									<i class="fa fa-search"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- header toggler -->
+					<span class="toggle_menu">
+						<span></span>
+					</span>
+				</header>
+			</div>
+			<span class="toggle_menu_side header-slide">
+				<span></span>
+			</span>
+
+			<section class="page_slider main_slider">
+				<div class="flexslider" data-nav="true" data-dots="false">
+					<ul class="slides">
+						<li class="ds text-center slide1">
+							<span class="flexslider-overlay"></span>
+							<span class="embed-responsive embed-responsive-16by9">
+								<iframe src="https://www.youtube.com/embed/UBufeh1yv2c?feature=oembed&amp;;showinfo=0&amp;;autoplay=1&amp;;controls=0&amp;;mute=1&amp;;loop=1&amp;;playlist=UBufeh1yv2c" allowfullscreen=""></iframe>
+							</span>
+							<div class="container">
+								<div class="row">
+									<div class="col-12 itro_slider">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeIn">
+													<p class="text-uppercase intro_after_featured_word">CASPERA</p>
+												</div>
+
+												<div class="intro_layer" data-animation="slideRight">
+													<h2 class="text-uppercase intro_featured_word">
+														MARKETİNQ
+													</h2>
+												</div>
+												<div class="intro_layer" data-animation="fadeIn">
+													<h3 class="intro_before_featured_word">
+														<span class="color-main2">Brendinq</span>,
+														<span class="color-main3">Veb-sayt</span> &amp;
+														<span class="color-main4">SEO</span>
+													</h3>
+												</div>
+												<div class="intro_layer page-bottom" data-animation="expandUp">
+													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+												</div>
+											</div>
+											<!-- eof .intro_layers -->
+										</div>
+										<!-- eof .intro_layers_wrapper -->
+									</div>
+									<!-- eof .col-* -->
+								</div>
+								<!-- eof .row -->
+							</div>
+							<!-- eof .container -->
+						</li>
+						<li class="ds text-center slide2">
+							<span class="flexslider-overlay"></span>
+							<img src="{% static 'images/slide_02.jpg' %}" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 itro_slider">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeIn">
+													<h3 class="text-uppercase intro_before_featured_word">
+														MEDİA
+													</h3>
+												</div>
+												<div class="intro_layer" data-animation="fadeIn">
+													<h2 class="text-uppercase intro_featured_word">
+														MARKETİNQ 
+													</h2>
+												</div>
+												<div class="intro_layer" data-animation="pullDown">
+													<p class="text-uppercase intro_after_featured_word"></p>
+												</div>
+												<div class="intro_layer page-bottom" data-animation="expandUp">
+													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+												</div>
+											</div>
+											<!-- eof .intro_layers -->
+										</div>
+										<!-- eof .intro_layers_wrapper -->
+									</div>
+									<!-- eof .col-* -->
+								</div>
+								<!-- eof .row -->
+							</div>
+							<!-- eof .container -->
+						</li>
+						<li class="ds text-center slide3">
+							<img src="{% static 'images/slide_03.jpg' %}" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-12 itro_slider">
+										<div class="intro_layers_wrapper">
+											<div class="intro_layers">
+												<div class="intro_layer" data-animation="fadeInRight">
+													<h2 class="text-uppercase intro_featured_word light">
+														Rəqəmsal
+													</h2>
+												</div>
+												<div class="intro_layer" data-animation="fadeIn">
+													<h2 class="text-uppercase intro_featured_word bold">
+														MARKETİNQ VƏ DİZAYN
+													</h2>
+												</div>
+												<div class="intro_layer" data-animation="fadeIn">
+													<h2 class="text-uppercase intro_featured_word">
+														
+													</h2>
+												</div>
+
+												<div class="intro_layer page-bottom" data-animation="expandUp">
+													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+												</div>
+											</div>
+											<!-- eof .intro_layers -->
+										</div>
+										<!-- eof .intro_layers_wrapper -->
+									</div>
+									<!-- eof .col-* -->
+								</div>
+								<!-- eof .row -->
+							</div>
+							<!-- eof .container -->
+						</li>
+
+					</ul>
+				</div>
+				<!-- eof flexslider -->
+				<div class="flexslider-bottom d-none d-xl-block">
+					<a href="#about" class="mouse-button animated floating"></a>
+				</div>
+			</section>
+			<div class="divider-10 d-block d-sm-none"></div>
+			<section class="s-pt-30 s-pt-lg-50 s-pt-xl-25 ls about-home" id="about">
+				<div class="divider-5 d-none d-xl-block"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+							<div class="main-content text-center">
+								<div class="img-wrap text-center">
+									<img src="{% static 'images/vertical_line.png' %}" alt="">
+									<div class="divider-35"></div>
+								</div>
+								<h5>
+									Marketinq dünyasına bizimlə yelkən açın
+								</h5>
+								<p>
+									Kreativ və effektiv media marketinq həlləri axtarışındasınızsa düzgün ünvandasız. <strong> Sosial media strategiyaları </strong> və 
+									<strong>unikal dizayn</strong>  xidmətlərimizlə brendinizi yüksək zirvələrə aparın. Bizimlə işləyin və sosial mediada böyük uğurlara imza ataq !
+								</p>
+								<div class="divider-30"></div>
+								<div class="img-wrap text-center">
+									<img src="{% static 'images/vertical_line.png' %}" alt="">
+								</div>
+								<div>
+									<div class="divider-40"></div>
+									<button type="button" class="btn btn-outline-maincolor">MÜRACİƏT ET</button>
+									<div class="divider-40"></div>
+								</div>
+								<div class="img-wrap text-center">
+									<img src="{% static 'images/vertical_line.png' %}" alt="">
+								</div>
+								<div class="divider-10 d-none d-xl-block"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="divider-10 d-block d-sm-none"></div>
+			</section>
+
+			<section class="s-pt-30 s-pb-3 service-item2 ls animate" id="services" data-animation="fadeInUp">
+				<div class="container">
+					<div class="row c-mb-50 c-mb-md-60">
+						<div class="d-none d-lg-block divider-20"></div>
+						{% for x in services %}
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="vertical-item text-center">
+								<div class="item-media">
+									<img src="{{ x.icon.url }}" alt="">
+								</div>
+								<div class="item-content">
+									<h6>
+										<a href="{% url 'serviceSingle' x.slug %}">{{ x.name }}</a>
+									</h6>
+
+									<p>
+										{{ x.description|slice:60 }}...
+									</p>
+
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="pink-line text-center">
+						<img src="{% static 'images/pink_line_big.png' %}" alt="">
+					</div>
+				</div>
+			</section>
+
+
+			<section class="s-pt-100 s-pt-lg-130 ds process-part skew_right s-parallax top_white_line_big overflow-visible" id="steps">
+				<div class="container">
+					<div class="divider-65"></div>
+					<div class="row align-items-center c-mb-20 c-mb-lg-60">
+						<div class="col-12 col-lg-4">
+							<div class="step-left-part text-right">
+								<h2 class="step-title">
+									<span class="color-main">01</span>Araşdırma</h2>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4">
+							<div class="step-center-part text-center">
+								<img src="{% static 'images/step_img_1.jpg' %}" alt="">
+							</div>
+						</div>
+						<div class="col-12 col-lg-4">
+							<div class="step-right-part">
+								<p class="step-text">Bazar araşdırması, şirkətin məhsul və ya xidmətinin tələb görəcəyi müştəri seqmentinin təyini ilə başlayır.
+									Hədəf kütləsinin ehtiyacları, seçimləri ve davranışları analiz edilərək, marketinq strategiyası bu məlumatlar üzərində qurulur.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row align-items-center right c-mb-20 c-mb-lg-60">
+						<div class="col-12 col-lg-4  order-lg-3">
+							<div class="step-left-part">
+								<h2 class="step-title color1">
+									<span class="color-main2">02</span>Strategiya</h2>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4 order-lg-2">
+							<div class="step-center-part text-center">
+								<img src="{% static 'images/step_img_2.jpg' %}" alt="">
+							</div>
+						</div>
+						<div class="col-12 col-lg-4 order-lg-1 text-right">
+							<div class="step-right-part ">
+								<p class="step-text"> Strategiya, məhsulun və ya xidmətin necə təqdim olunacağını, qiymətləndirmə politikasını, daşınma kanallarını ve tanıtılmasını təyin etməlidir.
+									Rəqabət analizi də bu mərhələdə önəmlidir. Şirkətin rəqibləriylə müqayisəsi, rəqabət üstünlükləri ve fərqlərinin göstərilməsi də vacib amillərdəndir.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row align-items-center c-mb-20 c-mb-lg-60">
+						<div class="col-12 col-lg-4">
+							<div class="step-left-part text-right part3">
+								<h2 class="step-title">
+									<span class="color-main3">03</span>Tətbiq</h2>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4">
+							<div class="step-center-part text-center">
+								<img src="{% static 'images/step_img_3.jpg' %}" alt="">
+							</div>
+						</div>
+						<div class="col-12 col-lg-4">
+							<div class="step-right-part">
+								<p class="step-text">Düzgün hədəf kütləsinin təyini və ilkin marketinq siyasətinin qurulmasından sonra gələn asas addımlardan biri də məhsul və ya xidmətin müştəriyə 
+									düzgün kontent və vizual görünüşlə çatdırılmasıdır. Peşəkar komandamız sizə bu mövzuda yüksək keyfiyyətlə xidmət göstərəcəkdir. 
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row align-items-center right c-mb-20 c-mb-lg-60">
+						<div class="col-12 col-lg-4  order-lg-3">
+							<div class="step-left-part part4">
+								<h2 class="step-title color1">
+									<span class="color-main4">04</span>Dəstək</h2>
+							</div>
+						</div>
+						<div class="col-12 col-lg-4 order-lg-2">
+							<div class="step-center-part text-center last">
+								<img src="{% static 'images/step_img_2.jpg' %}" alt="">
+							</div>
+						</div>
+						<div class="col-12 col-lg-4 order-lg-1 text-right">
+							<div class="step-right-part ">
+								<p class="step-text">Bütün bu müddət boyunca, əməkdaşlarımız nəticələri analiz edərək, daimi və qalıcı satışlarınızın olmasına və biznesinizi zirvələrə daşımanıza hər zaman dəstək olacaq.</p>
+							</div>
+						</div>
+					</div>
+					<div class="divider-10 d-block d-sm-none"></div>
+					<div class="img-wrap text-center">
+						<img src="{% static 'images/vertical_line2.png' %}" alt="">
+					</div>
+					<div class=" white-button text-center">
+						<a class="btn white-btn" href="#">Müraciət et</a>
+					</div>
+					<div class="divider-30 d-none d-xl-block"></div>
+				</div>
+			</section>
+
+			<section class="s-pt-75 s-pt-xl-50 gallery-carousel main-gallery container-px-0" id="gallery">
+				<div class="container-fluid">
+					<div class="img-wrap text-center">
+						<img src="{% static 'images/vertical_line.png' %}" alt="">
+						<div class="divider-40 d-block d-sm-none"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row justify-content-center">
+								<div class="col-md-10 col-xl-5">
+									<div class="filters gallery-filters small-text text-lg-right">
+										<a href="#" data-filter="*" class="active selected">Hamısı</a>
+										{% for category in portfolio_categories %}
+										<a href="#" data-filter=".pc{{ category.id }}">{{ category.name }}</a>
+										{% endfor %}
+								
+									</div>
+								</div>
+							</div>
+							<div class="owl-carousel gallery-owl-nav" data-autoplay="false" data-responsive-lg="5" data-responsive-md="3" data-responsive-sm="3" data-responsive-xs="2" data-nav="true" data-dots="false" data-filters=".gallery-filters" data-margin="0" data-loop="true">
+								{% for item in portfolio %}
+								<div class="vertical-item item-gallery content-absolute text-center ds pc{{ item.category.id }}">
+									<div class="item-media">
+										<img src="{{item.image.url}}" alt="">
+										<div class="media-links">
+
+										</div>
+									</div>
+									<div class="item-content">
+										<h6>
+											<a class="small-text" href="gallery-regular.html">{{ item.category.name }}</a>
+										</h6>
+										<h6>
+											<a href="gallery-regular.html">{{ item.name }}</a>
+										</h6>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<!-- .owl-carousel-->
+						</div>
+					</div>
+				</div>
+			</section>
+
+	
+
+			<section class="ls ms book-item s-pb-30 s-pb-lg-25" >
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+							<div class="text-block text-center">
+						
+								<div class="img-wrap text-center" style="margin-top:90px">
+									<img src="{% static 'images/vertical_line.png' %}" alt="">
+									<div class="divider-35"></div>
+								</div>
+								<h5>
+									Müasir marketinqdə hər zaman bir addım öndə ol
+								</h5>
+								<p>
+									Şirkətimiz, sürətlə dəyişən marketinq dünyasına uyğunlaşmaq üçün, trendləri hər zaman izləyir və
+									müştərilərimizə hər zaman öncü həllər təqdim etmək üçün əlindən gələni edir. Yenilikçi və peşəkar xidmət üçün
+									daimi olaraq bazarın tələblərini və trendləri izləməyə davam edir.
+								</p>
+								<div class="divider-30"></div>
+								<div class="img-wrap text-center">
+									<img src="{% static 'images/vertical_line.png' %}" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="divider-40"></div>
+						<div class="row c-gutter-30 c-mb-30 c-mb-lg-0 text-center book">
+							{% for blog in blogs %}
+							<div class="col-12 col-lg-4">
+								<div class="stage book-1 ls">
+									<img src="{{ blog.mainimage.url }}" alt="#">
+									<div class="info" style="background: url('{{ blog.backimage.url }}');">
+										<header>
+											<h6>
+												<a href="#">{{ blog.title }}
+													<br>{{ blog.category.name }}</a>
+											</h6>
+										</header>
+										<p>
+										{{ blog.content_without_ck|slice:120 }}...
+										</p>
+										<p class="small-text link-a">
+											<a href="#">Daha ətraflı</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="divider-30"></div>
+						<div class="text-center img-wrap col-md-12">
+							<div>
+								<img src="{% static 'images/vertical_line.png' %}" alt="">
+							</div>
+							<div class="divider-40"></div>
+							<a href="#" class="btn btn-outline-maincolor">Bloqlar</a>
+							<div class="divider-40"></div>
+							<div>
+								<img src="{% static 'images/vertical_line.png' %}" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="divider-10"></div>
+				</div>
+			</section>
+
+		
+
+
+
+			<section class="s-pt-130 s-pt-md-50 ls text-section">
+				<div class="divider-30"></div>
+				<div class="container">
+					<div class="row">
+						<div class="text-center col-md-12 justify-content-center text-block">
+			
+							<div class="divider-35"></div>
+							<div class="content">
+								<h1 >
+									Biznesinizi peşəkar marketinq komandasına həvalə edin
+								</h1>
+								<p>
+									Uğura gedən yolda bizimlə addımlayın
+								</p>
+								<div class="divider-30"></div>
+							</div>
+							<img src="{% static 'images/vertical_line.png' %}" alt="">
+							<div>
+								<div class="divider-40"></div>
+								<a href="#" class="btn btn-outline-maincolor">İndİ başla!</a>
+								<div class="divider-30"></div>
+							</div>
+							<div class="img-wrap overflow-visible">
+								<img src="{% static 'images/vertical_line.png' %}" alt="">
+								<div class="divider-5 d-none d-xl-block"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<section class="s-pt-50 s-pb-100 s-pt-lg-30 s-pb-lg-75 ls ms teaser-contact-icon main-icon s-parallax" id="contact">
+				<div class="corner corner-inverse"></div>
+				<div class="text-center img-wrap col-md-12">
+					<img src="{% static 'images/dark_line_short.png' %}" alt="">
+				</div>
+				<div class="container">
+					<div class="divider-10 d-none d-xl-block"></div>
+					<div class="row c-mb-50 c-mb-lg-0">
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{% static 'images/icon1.png' %}" alt="">
+								</div>
+							</div>
+							<h6>
+								Əlaqə
+							</h6>
+							<p>
+								<a href="tel:+994554464644">+994554464644</a>
+								
+							</p>
+						</div>
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{% static 'images/icon3.png' %}" alt="">
+								</div>
+							</div>
+							<h6>
+								E-poçt
+							</h6>
+							<p>
+								<a  >info@capsera.az</a>
+
+							</p>
+						</div>
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{% static 'images/icon2.png' %}" alt="">
+								</div>
+							</div>
+							<h6>
+								Ünvan
+							</h6>
+							<p>
+								Bakı şəh. Jalə plaza,
+								<br> 5-ci mərtəbə
+							</p>
+						</div>
+					</div>
+					<div class="divider-30 d-none d-lg-block"></div>
+					<div class="text-center img-wrap col-md-12 layout-2">
+						<img src="{% static 'images/dark_line_short.png' %}" alt="">
+					</div>
+				</div>
+				<div class="divider-10"></div>
+			</section>
+
+
+			<footer class="page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
+
+				<div class="container">
+					<div class="container">
+						<div class="row">
+							<div class="divider-20 d-none d-xl-block"></div>
+							<div class="col-md-12 mt-4 text-center animate" data-animation="fadeInUp">
+								<img class="margin-negative" src="{% static 'images/footer_logo.png' %}" alt="">
+								<div class="widget widget_social_buttons">
+									<a href="http://www.facebook.com/#" class="fa fa-facebook color-icon" title="facebook"></a>
+									<a href="http://www.twitter.com/#" class="fa fa-instagram color-icon" title="instagram"></a>
+
+									<a href="http://www.youtube.com/#" class="fa fa-youtube-play color-icon" title="youtube-play"></a>
+									<a href="http://www.linkedin.com/#" class="fa fa-tiktok color-icon" style="filter: brightness(0);" title="tiktok"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+
+			<section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="divider-20 d-none d-lg-block"></div>
+						<div class="col-md-12 text-center">
+							<p>©
+								<span class="copyright_year">2023</span> Bütün hüquqlar Caspera MMC tərəfindən qorunur</p>
+						</div>
+						<div class="divider-20 d-none d-lg-block"></div>
+					</div>
+				</div>
+			</section>
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+
+	<script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script><script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+
+
+
+</body></html>
