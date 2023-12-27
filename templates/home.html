@@ -75,7 +75,7 @@
 						<div class="row align-items-center">
 							<div class="col-xl-2 col-lg-3 col-11">
 								<a href="./" class="logo text-center">
-									<img src="{% static 'images/logo.png' %}" alt="">
+									<img style="aspect-ratio:7/3;object-fit:cover;filter: brightness(1.6);filter: saturate(2);" src="{% static 'sayt1.svg' %}" alt="">
 								</a>
 							</div>
 							<div class="col-xl-8 col-lg-6 col-1 text-sm-center">
@@ -89,17 +89,17 @@
 										
 										</li>
 										<li>
-											<a href="about.html">Haqqımızda</a>
+											<a href="{% url 'about' %}">Haqqımızda</a>
 										</li>
 										<li>
-											<a href="services1.html">Xidmətlər</a>
+											<a href="{% url 'services' %}">Xidmətlər</a>
 										
 										</li>
 										<!-- blog -->
 
 										<!-- gallery -->
 										<li>
-											<a href="gallery-regular.html">Portfolio</a>
+											<a href="{% url 'portfolio' %}">Portfolio</a>
 									
 										</li>
 										<!-- eof Gallery -->
@@ -109,13 +109,13 @@
 										<!-- eof pages -->
 
 										<li>
-											<a href="blog-1.html">Bloq</a>
+											<a href="{% url 'blogs' %}">Bloq</a>
 								
 										</li>
 										<!-- eof blog -->
 
 										<li>
-											<a href="contact.html">Əlaqə</a>
+											<a href="{% url 'contact' %}">Əlaqə</a>
 										
 										</li>
 										<!-- eof contacts -->
@@ -133,14 +133,14 @@
 							</div>
 							<div class="col-xl-2 col-lg-3 text-lg-left text-xl-right d-none d-lg-block">
 								<div class="header_phone">
-									<h6>
+									<p>
 										<a href="tel:+994554464644"><span>+994 55 </span> 446 46 44</a>
-									</h6>
+									</p>
 								</div>
 							</div>
 							<div class="search-box">
-								<input type="text" name="search" placeholder="Bloqlarda axtar..." class="search-text">
-								<a href="#" class="search-btn">
+								<input type="text" name="search" id="nicat" placeholder="Bloqlarda axtar..." class="search-text">
+								<a onclick="performSearch()" class="search-btn">
 									<i class="fa fa-search"></i>
 								</a>
 							</div>
@@ -186,7 +186,7 @@
 													</h3>
 												</div>
 												<div class="intro_layer page-bottom" data-animation="expandUp">
-													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+													<a class="btn btn-maincolor" href="{% url 'contact' %}">Müracİət et</a>
 												</div>
 											</div>
 											<!-- eof .intro_layers -->
@@ -221,7 +221,7 @@
 													<p class="text-uppercase intro_after_featured_word"></p>
 												</div>
 												<div class="intro_layer page-bottom" data-animation="expandUp">
-													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+													<a class="btn btn-maincolor" href="{% url 'contact' %}">Müracİət et</a>
 												</div>
 											</div>
 											<!-- eof .intro_layers -->
@@ -258,7 +258,7 @@
 												</div>
 
 												<div class="intro_layer page-bottom" data-animation="expandUp">
-													<a class="btn btn-maincolor" href="about.html">Müracİət et</a>
+													<a class="btn btn-maincolor" href="{% url 'contact' %}">Müracİət et</a>
 												</div>
 											</div>
 											<!-- eof .intro_layers -->
@@ -303,7 +303,7 @@
 								</div>
 								<div>
 									<div class="divider-40"></div>
-									<button type="button" class="btn btn-outline-maincolor">MÜRACİƏT ET</button>
+									<button onclick="sendtocontact()" type="button" class="btn btn-outline-maincolor">MÜRACİƏT ET</button>
 									<div class="divider-40"></div>
 								</div>
 								<div class="img-wrap text-center">
@@ -435,7 +435,7 @@
 						<img src="{% static 'images/vertical_line2.png' %}" alt="">
 					</div>
 					<div class=" white-button text-center">
-						<a class="btn white-btn" href="#">Müraciət et</a>
+						<a class="btn white-btn" href="{% url 'contact' %}">Müraciət et</a>
 					</div>
 					<div class="divider-30 d-none d-xl-block"></div>
 				</div>
@@ -471,10 +471,10 @@
 									</div>
 									<div class="item-content">
 										<h6>
-											<a class="small-text" href="gallery-regular.html">{{ item.category.name }}</a>
+											<a class="small-text" href="{% url 'portfolioSingle' item.slug %}">{{ item.category.name }}</a>
 										</h6>
 										<h6>
-											<a href="gallery-regular.html">{{ item.name }}</a>
+											<a href="{% url 'portfolioSingle' item.slug %}">{{ item.name }}</a>
 										</h6>
 									</div>
 								</div>
@@ -522,7 +522,7 @@
 									<div class="info" style="background: url('{{ blog.backimage.url }}');">
 										<header>
 											<h6>
-												<a href="#">{{ blog.title }}
+												<a href="{% url 'blogSingle' blog.slug %}">{{ blog.title }}
 													<br>{{ blog.category.name }}</a>
 											</h6>
 										</header>
@@ -530,7 +530,7 @@
 										{{ blog.content_without_ck|slice:120 }}...
 										</p>
 										<p class="small-text link-a">
-											<a href="#">Daha ətraflı</a>
+											<a href="{% url 'blogSingle' blog.slug %}">Daha ətraflı</a>
 										</p>
 									</div>
 								</div>
@@ -543,7 +543,7 @@
 								<img src="{% static 'images/vertical_line.png' %}" alt="">
 							</div>
 							<div class="divider-40"></div>
-							<a href="#" class="btn btn-outline-maincolor">Bloqlar</a>
+							<a href="{% url 'blogs' %}" class="btn btn-outline-maincolor">Bloqlar</a>
 							<div class="divider-40"></div>
 							<div>
 								<img src="{% static 'images/vertical_line.png' %}" alt="">
@@ -577,7 +577,7 @@
 							<img src="{% static 'images/vertical_line.png' %}" alt="">
 							<div>
 								<div class="divider-40"></div>
-								<a href="#" class="btn btn-outline-maincolor">İndİ başla!</a>
+								<a href="{% url 'contact' %}" class="btn btn-outline-maincolor">İndİ başla!</a>
 								<div class="divider-30"></div>
 							</div>
 							<div class="img-wrap overflow-visible">
@@ -659,11 +659,12 @@
 							<div class="col-md-12 mt-4 text-center animate" data-animation="fadeInUp">
 								<img class="margin-negative" src="{% static 'images/footer_logo.png' %}" alt="">
 								<div class="widget widget_social_buttons">
-									<a href="http://www.facebook.com/#" class="fa fa-facebook color-icon" title="facebook"></a>
-									<a href="http://www.twitter.com/#" class="fa fa-instagram color-icon" title="instagram"></a>
+									<a href="https://www.facebook.com/people/Caspera-Azerbaijan/pfbid0YApEcHmfQxVswNtWHKKKF8c4NHcVUV4YUsmoNnLug7jhwiPBP3gNtW8aHF2eEg4zl/" class="fa fa-facebook color-icon" title="facebook"></a>
+									<a href="https://www.instagram.com/caspera.az/" class="fa fa-instagram color-icon" title="instagram"></a>
 
-									<a href="http://www.youtube.com/#" class="fa fa-youtube-play color-icon" title="youtube-play"></a>
-									<a href="http://www.linkedin.com/#" class="fa fa-tiktok color-icon" style="filter: brightness(0);" title="tiktok"></a>
+									<a href="https://studio.youtube.com/channel/UC_8Vv8y_vakRGl7Hffu-AxQ/editing/images" class="fa fa-youtube-play color-icon" title="youtube-play"></a>
+									<a href="https://www.tiktok.com/@caspera.az?_t=8iWrwx11rZI&_r=1" class="fa fa-tiktok color-icon" style="filter: brightness(0);" title="tiktok"></a>
+									<a href="http://www.linkedin.com/in/caspera-agency-84a6902a3/" class="fa fa-linkedin color-icon" style="filter: brightness(1);" title="linkedin"></a>
 								</div>
 							</div>
 						</div>
@@ -690,11 +691,29 @@
 		<!-- eof #box_wrapper -->
 	</div>
 	<!-- eof #canvas -->
+<script>
+	function sendtocontact(){
+		window.location.href='/'
+	}
+</script>
+	<script>
+		function performSearch() {
+			var searchQuery = document.getElementById('nicat').value;
+			window.location.href = '/bloqlar?blog=' + encodeURIComponent(searchQuery);
+		}
 
 
+			var input = document.getElementById('nicat');
+				input.addEventListener("keypress", function(event) {
+				if (event.key === "Enter") {
+					var searchQuery = document.getElementById('nicat').value;
+					window.location.href = '/bloqlar?blog=' + encodeURIComponent(searchQuery);
+				}
+				});
+	</script>
 	<script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script><script src="{% static 'js/compressed.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
-	<script src="{% static 'js/switcher.js' %}"></script>
+
 
 
 

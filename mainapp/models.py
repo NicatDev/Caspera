@@ -44,6 +44,7 @@ class Tag(models.Model):
 
 class Blog(BaseMixin):
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
+    tag = models.ManyToManyField(Tag,null=True)
     title = models.CharField(max_length = 200)
     mainimage = models.ImageField()
     backimage = models.ImageField(null=True,blank=True)
@@ -65,17 +66,7 @@ class Blog(BaseMixin):
                 new_slug = f"{seo(self.title)}-{count}"
                 count += 1
         super(Blog, self).save(*args, **kwargs)
-
-
-
-class Blog_images(models.Model):
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name = 'blog_images')
-    image = models.ImageField()
-
-    def __str__(self):
-        return self.blog.title
     
-
 class Portfolio_category(models.Model):
     name = models.CharField(max_length = 200)
 

@@ -7,6 +7,8 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
+import json
+from mainapp.forms import Messageform
 
 def home(request):
     portfolio_categories = Portfolio_category.objects.all()
@@ -86,15 +88,75 @@ def serviceSingle(request,slug):
 
 
 def blogs(request):
+    
     blog_list = Blog.objects.all().only('mainimage','title','content_without_ck','category__name')
+    recent_blogs = Blog.objects.all()[:: -1]
+    categories = Category.objects.all().only('name','id')
+    tags = Tag.objects.all()
+    
+    if request.GET.get('blog'):
+        name = request.GET.get('blog')
+        blog_list = blog_list.filter(Q(title__icontains=name) | Q(content_without_ck__icontains=name))
+        
+    if request.GET.get('category'):
+        category = request.GET.get('category')
+        blog_list = blog_list.filter(category__id=category)
+    
+    if request.GET.get('tag'):
+        tag = request.GET.get('tag')
+        blog_list = blog_list.filter(tag__id__in=tag)
+        
     paginator = Paginator(blog_list, 4)
     page = request.GET.get("page", 1)
     blogs = paginator.get_page(page)
     total_pages = [x+1 for x in range(paginator.num_pages)]
-    print(total_pages)
+    
     context = {
         'blogs':blogs,
-        'total_pages':total_pages
+        'total_pages':total_pages,
+        'categories':categories,
+        'recent_blogs':recent_blogs,
+        'tags':tags
     }
     
     return render(request,'bloglist.html',context)
+
+
+def blogSingle(request,slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    related_blogs =  Blog.objects.all().exclude(id=blog.id)[0:3]
+    categories = Category.objects.all().only('name','id')
+    tags = Tag.objects.all()
+    if len(related_blogs) > 4:
+        related_blogs = related_blogs[0:4]
+
+    next_blog = Blog.objects.exclude(id=blog.id).order_by('created_at').first()
+    previous_blog = Blog.objects.exclude(id=blog.id).exclude(id=next_blog.id).order_by('-created_at').first()
+
+    context = {
+        'blog':blog,
+        'recent_blogs':related_blogs,
+        'next_blog':next_blog,
+        'pre_blog':previous_blog,
+        'categories':categories,
+        'tags':tags
+    }
+
+    return render(request, 'blog-single.html',context)
+
+def contact(request):
+    context = {}
+    return render(request,'Contact.html',context)
+
+def message(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        newmessage = Messageform(data=data)
+        if newmessage.is_valid():
+            newmessage.save()
+        else:
+            return HttpResponse(status=405) 
+        data = {'message': 'Data saved successfully'}
+        return JsonResponse(data)
+    else:
+        return HttpResponse(status=405) 
