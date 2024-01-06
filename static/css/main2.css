@@ -10828,7 +10828,7 @@ widget_recent_entries
 a[class*='fa-']:before {
 	display: inline-block;
 	font-family: "FontAwesome", sans-serif;
-	font-size: 14px;
+	font-size: 22px;
 	line-height: 1;
 	width: 1em;
 }
@@ -18580,6 +18580,7 @@ a.btn {
 
 .page_footer .col-md-12 .widget_social_buttons a {
 	margin: 0 10px 70px;
+	font-size: 25px
 }
 
 @media (min-width: 1200px) {
