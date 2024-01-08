@@ -260,10 +260,10 @@
 									</div>
 									<div class="item-content">
 										<h6>
-											<a class="small-text" href="gallery-regular.html">{{ item.category.name }}</a>
+											<a class="small-text" href="{% url 'portfolioSingle' item.slug %}">{{ item.category.name }}</a>
 										</h6>
 										<h6>
-											<a href="gallery-regular.html">{{ item.name }}</a>
+											<a href="{% url 'portfolioSingle' item.slug %}">{{ item.name }}</a>
 										</h6>
 									</div>
 								</div>
