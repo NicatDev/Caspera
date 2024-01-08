@@ -13,7 +13,7 @@ from mainapp.forms import Messageform
 def home(request):
     portfolio_categories = Portfolio_category.objects.all()
     portfolio = Portfolio.objects.all().select_related('category')
-    services = Services.objects.all()
+    services = Services.objects.all().order_by('ordering')
     blogs = Blog.objects.all().select_related('category').only('category','category__name','title','content_without_ck','mainimage','backimage')
     context = {
         'blogs':blogs,

@@ -22,7 +22,8 @@ class Services(BaseMixin):
     icon = models.ImageField(null=True,blank=True)
     image = models.ImageField(null=True,blank=True)
     bottomdescription = models.TextField()
-
+    ordering = models.SmallIntegerField(null=True,blank=True)
+    
     def __str__(self):
         return self.name
     
