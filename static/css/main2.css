@@ -7705,7 +7705,7 @@ body.boxed {
 
 .ds .fa.color-icon:hover {
 	color: #fff;
-	filter: brightness(1);
+	filter: brightness(1) !important;
 }
 
 .ds .color-icon.bg-icon {
