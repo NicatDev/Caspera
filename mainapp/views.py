@@ -14,7 +14,11 @@ def home(request):
     portfolio_categories = Portfolio_category.objects.all()
     portfolio = Portfolio.objects.all().select_related('category')
     services = Services.objects.all().order_by('ordering')
+    if len(services)>6:
+        services = services[0:6]
     blogs = Blog.objects.all().select_related('category').only('category','category__name','title','content_without_ck','mainimage','backimage')
+    if len(blogs)>6:
+        blogs = services[0:6]
     context = {
         'blogs':blogs,
         'portfolio':portfolio,
